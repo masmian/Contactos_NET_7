@@ -1,0 +1,30 @@
+@model form.Models.Contacto;
+@{
+    ViewData["Title"] = "Contactos";
+}
+
+<h1 class="text-center"> Contactos con .NET 7 </h1>
+
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card border">
+            <div class="card-header text-center">
+                <h4>Detalle de contacto</h4>
+            </div>
+            <div class="card-body">
+                
+                <!-- Id del usuario como campo oculto -->
+                <input type="hidden" asp-for="Id">
+
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nombre:</strong><span>@Html.DisplayFor(m => m.Nombre)</span></li>
+                    <li class="list-group-item"><strong>Teléfono:</strong><span>@Html.DisplayFor(m => m.Telefono)</span></li>
+                    <li class="list-group-item"><strong>Celular:</strong><span>@Html.DisplayFor(m => m.Celular)</span></li>
+                    <li class="list-group-item"><strong>Email:</strong><span>@Html.DisplayFor(m => m.Email)</span></li>
+                </ul>
+                <a asp-action="Index" asp-controller="Inicio" class="btn btn-secondary">Regresar</a>
+            </div>
+        </div>
+    </div>
+</div>
